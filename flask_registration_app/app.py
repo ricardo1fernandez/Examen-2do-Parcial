@@ -1,5 +1,14 @@
+
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+
+# Generate requirements.txt file with the necessary dependencies
+!pip freeze > requirements.txt
+
+# Display the contents of the generated requirements.txt file
+with open('requirements.txt', 'r') as file:
+    content = file.read()
+    print(content)
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///asistentes.db'
